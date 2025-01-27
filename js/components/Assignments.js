@@ -16,9 +16,9 @@ export default {
         return {
             pageTitle: "Lesson 3 - Lists & Computed Properties",
             assignments: [
-                { id: 1, name: 'Finish Project', complete: false},
-                { id: 2, name: 'Read Chapter 4', complete: false},
-                { id: 3, name: 'Turn in Homework', complete: false},
+                { id: 1, name: 'Finish Project', complete: false, tag: 'math'},
+                { id: 2, name: 'Read Chapter 4', complete: false, tag: 'science'},
+                { id: 3, name: 'Turn in Homework', complete: false, tag: 'math'},
             ],
         }
     },
