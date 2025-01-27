@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Basics: Lesson</title>
+    <title>Vue Basics</title>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="h-full grid place-items-center">
     <div id="app">
+        <h1 class="font-bold mb-8">Vue Basics: {{pageTitle}}</h1>
         <section>
-            <h2 class="font-bold mb-2">Lessons</h1>
+            <p>Placeholder</p>
         </section>
     </div>
 
     <script>
-        Vue.createApp({}).mount('#app');
+        let app = {
+            data() {
+                return {
+                    pageTitle: "Lesson 1",
+                }
+            }
+        }
+        Vue.createApp(app).mount('#app');
     </script>
 </body>
 </html>

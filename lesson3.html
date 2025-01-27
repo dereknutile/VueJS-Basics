@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 3</title>
+    <title>Vue Basics</title>
     <script src="https://unpkg.com/vue@3"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body class="h-full grid place-items-center">
     <div id="app">
+        <h1 class="font-bold mb-8">Vue Basics: {{pageTitle}}</h1>
         <section v-show="inProgressAssignments.length > 0">
             <h2 class="font-bold mb-2">In Progress</h2>
             <ul>
@@ -45,6 +46,7 @@
         let app = {
             data() {
                 return {
+                    pageTitle: "Lesson 3 - Lists & Computed Properties",
                     assignments: [
                         { id: 1, name: 'Finish Project', complete: false},
                         { id: 2, name: 'Read Chapter 4', complete: false},

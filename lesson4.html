@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basics</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-full grid place-items-center">
+    <div id="app">
+        <h1 class="font-bold mb-8">Vue Basics</h1>
+        <app-button>Submit</app-button>
+    </div>
+
+
+    <script>
+        let app = {
+            components: {
+                'app-button': {
+                    template: `
+                        <button
+                            class="bg-gray-200 hover:bg-gray-400 border rounded px-5 py-2 disabled:cursor-not-allowed"
+                            :disabled="processing"
+                            @click="processing = true"
+                        >
+                            <slot />
+                        </button>
+                    `,
+
+                    data() {
+                        return {
+                            processing: false
+                        };
+                    }
+                },
+            }
+        };
+
+        Vue.createApp(app).mount('#app');
+    </script>
+</body>
+</html>
