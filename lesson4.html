@@ -10,13 +10,18 @@
 
 <body class="h-full grid place-items-center">
     <div id="app">
-        <h1 class="font-bold mb-8">Vue Basics</h1>
+        <h1 class="font-bold mb-8">Vue Basics: {{pageTitle}}</h1>
         <app-button>Submit</app-button>
     </div>
 
 
     <script>
         let app = {
+            data() {
+                return {
+                    pageTitle: "Lesson 4 - First Custom Component",
+                }
+            },
             components: {
                 'app-button': {
                     template: `
@@ -35,7 +40,7 @@
                         };
                     }
                 },
-            }
+            },
         };
 
         Vue.createApp(app).mount('#app');
