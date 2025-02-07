@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Basics</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: grid;
+            place-items: center;
+        }
+        .text-blue {
+            color: blue;
+        }
+        .text-green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <button :class="active ? 'text-blue' : 'text-green'" @click="toggleButtonClass">
+        {{ buttonLabel}}
+    </button>
+</div>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                active: false,
+                buttonLabel: "green"
+            }
+        },
+        methods: {
+            toggleButtonClass() {
+                this.active = ! this.active;
+                this.active ? this.buttonLabel = "blue" : this.buttonLabel = "green"
+            }
+        },
+        mounted() {}
+    }).mount('#app');
+</script>
+</body>
+</html>
